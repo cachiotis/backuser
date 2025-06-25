@@ -9,11 +9,11 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 // ⚠️ Agrega la URL de tu frontend en Netlify
-app.use(cors({
-  origin: 'https://polite-malasada-6d9952.netlify.app',
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type',
-}));
+const corsOptions = {
+    origin: 'https://polite-malasada-6d9952.netlify.app',
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type',
+};
 
 app.use(cors(corsOptions));
 
