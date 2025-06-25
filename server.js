@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ⚠️ Agrega la URL de tu frontend en Netlify
 app.use(cors({
-  origin: 'https://frontuser.vercel.app/',
+  origin: 'polite-malasada-6d9952.netlify.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true // Solo si usas cookies/sesiones
 }));
