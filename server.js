@@ -11,9 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 // ⚠️ Agrega la URL de tu frontend en Netlify
 app.use(cors({
   origin: 'https://polite-malasada-6d9952.netlify.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true // Solo si usas cookies/sesiones
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type',
 }));
+
+app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
